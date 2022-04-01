@@ -3,9 +3,9 @@
 
 가랏 디그다 !!
 
-<div>
+
 ![Untitled (4)](https://user-images.githubusercontent.com/78525973/161313493-36800b28-45a8-4b7a-9846-78f6bb459efe.png)
-</div>
+
 
 ### 디그다란 ?
 포켓몬의 일종으로 두더지로 추정된다. 자세한건 : https://pokemon.fandom.com/ko/wiki/%EB%94%94%EA%B7%B8%EB%8B%A4_(%ED%8F%AC%EC%BC%93%EB%AA%AC)
