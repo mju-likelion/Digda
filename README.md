@@ -6,6 +6,8 @@
 
 <div> ![Untitled (4)](https://user-images.githubusercontent.com/78525973/161313493-36800b28-45a8-4b7a-9846-78f6bb459efe.png) ![재민](https://user-images.githubusercontent.com/78525973/161313813-6e7f0b48-81b0-4a1e-827f-57175a059984.png) </div>
 
+<div> <img src="https://user-images.githubusercontent.com/78525973/161313493-36800b28-45a8-4b7a-9846-78f6bb459efe.png"> <img src="https://user-images.githubusercontent.com/78525973/161313813-6e7f0b48-81b0-4a1e-827f-57175a059984.png">
+
 
 
 ### 디그다란 ?
