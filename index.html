@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Vanilla Coding | Bootcamp Prep</title>
+    <link rel="stylesheet" href="assets/styles/module.css" />
+    <link rel="stylesheet" href="assets/styles/index.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <h1 class="title">Welcome!<br />whack-a-mole</h1>
+    </header>
+    <div class="main">
+      <div id="ending" class="ending">
+        <p id="ending-box"></p>
+      </div>
+      <div id="ending-bg" class="ending-bg"></div>
+      <ul class="whack-a-mole clearfix">
+        <li class="mole">
+          <img id="1" src="assets/images/mole.png" />
+        </li>
+        <li class="mole">
+          <img id="2" src="assets/images/mole.png" />
+        </li>
+        <li class="mole">
+          <img id="3" src="assets/images/mole.png" />
+        </li>
+        <li class="mole">
+          <img id="4" src="assets/images/mole.png" />
+        </li>
+        <li class="mole">
+          <img id="5" src="assets/images/mole.png" />
+        </li>
+        <li class="mole">
+          <img id="6" src="assets/images/mole.png" />
+        </li>
+        <li class="mole">
+          <img id="7" src="assets/images/mole.png" />
+        </li>
+        <li class="mole">
+          <img id="8" src="assets/images/mole.png" />
+        </li>
+        <li class="mole">
+          <img id="9" src="assets/images/mole.png" />
+        </li>
+      </ul>
+      <div class="point-box clearfix">
+        <div class="point-wrap">
+          <p id="point-text">Point :</p>
+          <p id="count-mole">0</p>
+          <p id="count-mole2">/10</p>
+        </div>
+        <div class="btn-wrap">
+          <button type="button" class="start-btn">PRESS START</button>
+        </div>
+      </div>
+    </div>
+    <script>
+      // 버튼 클릭시 게임시작
+      // 다음 __________부분을 위의 주석을 보고 빈칸을 채워주세요
+
+      // .start-btn을 선택하여 변수 startBtn에 할당합니다. (1번)
+      _______________________________
+      // 클릭이벤트 발생시 startMole실행 (2번)
+      _______________________________
+
+      function startMole() {
+        startBtn.removeEventListener("click", startMole);
+        startBtn.style.color = "#3d3f43";
+        getPoint = 0;
+        point = 0;
+        turn = 0;
+        setTimeout(showingMole, 1000);
+      }
+      // 두더지 랜덤하게 구멍에서 등장하기
+      var moleNumber;
+      var randomNum;
+      var preNum;
+
+      // 함수 randomHole을 선언하세요 (3번)
+      _____________________________ {
+        randomNum = Math.floor(Math.random() * 10);
+        if (preNum !== randomNum && randomNum > 0) {
+          preNum = randomNum;
+          return randomNum;
+        }
+        return randomHole();
+      }
+
+      function moleActive(num) {
+        num.classList.add("active");
+      }
+      function moleHide(num) {
+        num.classList.remove("active");
+      }
+      var moleCatch = 0;
+
+      function showingMole() {
+        if (turn < 10) {
+          moleNumber = document.getElementById(`${randomHole()}`);
+          moleActive(moleNumber);
+          // 클릭시 catchMole함수 실행 (4번)
+          moleNumber.____________("_____", ________);
+          // seeMOle을 1초뒤에 실행시킨후 종료 (5번)
+          moleCatch = ___________(seeMOle, 1000);
+          turn++;
+        } else {
+          modalEvent();
+          startBtn.addEventListener("click", startMole);
+          startBtn.textContent = "PRESS AGAIN";
+          startBtn.style.color = "#f2ecff";
+        }
+      }
+      // 게임 엔딩 + 다시 하기 버튼 실행
+      var endingBtn = document.querySelector("#ending-bg");
+      var finalEnding = "finalEnding";
+
+      endingBtn.addEventListener("click", hideModal);
+
+      function modalEvent() {
+        let point = getPoint * 10;
+        // 만약 point가 70보다 작거나 같으면 (6번)
+        if (_________) {
+          ending.children[0].innerHTML =
+            "<span>GAME OVER </span></br>YOUR SCORE IS&nbsp;&nbsp;<span class='last'>" +
+            point +
+            "</span>!<img src=assets/images/HellMole.png></br><span>사실 디그다는 헬창입니다ㅋ</span>";
+        } else {
+          // ?
+          ending.children[0]._________ =
+            "<span>YOU WIN</span></br>YOUR SCORE IS&nbsp;&nbsp;<span class='last'>" +
+            point +
+            "</span>!";
+        }
+        ending.classList.add(finalEnding);
+        endingBtn.classList.add(finalEnding);
+      }
+      function hideModal() {
+        ending.classList.remove(finalEnding);
+        endingBtn.classList.remove(finalEnding);
+      }
+
+      // 클릭으로 두더지 잡기
+      // id가 count-mole인 dom을 선택하여 변수 cntBox에 선언합니다. (7번)
+      ________________________________
+      function seeMOle() {
+        moleNumber.removeEventListener("click", catchMole);
+        moleHide(moleNumber);
+        clearTimeout(moleCatch);
+        setTimeout(showingMole, 1000);
+      }
+
+      function catchMole() {
+        seeMOle();
+        clearTimeout(moleCatch);
+        getPoint++;
+        cntBox.innerHTML = getPoint;
+      }
+    </script>
+  </body>
+</html>
